@@ -4266,8 +4266,9 @@ Show me posts trending
 $(document)
   .ready(function(){
     $('.demo .ui.dropdown')
-      .dropdown()
-    ;
+      // Clicking a language will trigger onChange, 
+      // as well as clicking outside the dropdown afterwards to take out the cursor's focus()
+      .dropdown({onChange: function(value, text){alert(value + ' AND ' + text)}});
     $('.demo .ui.menu .dropdown')
       .dropdown({
         on: 'hover'
